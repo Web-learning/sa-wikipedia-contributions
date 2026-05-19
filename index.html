@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Contribution Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- =========================
+INDEX.HTML
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>SA Wikipedia Contribution Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div>
+      <h1>South African Wikipedia Analytics</h1>
+      <p>
+        Track editor activity, edit streaks, contribution momentum and
+        language community participation across South African Wikipedias.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTROLS -->
+
+  <section class="controls">
+
+    <div class="field">
+      <label>Wikipedia Language</label>
+
+      <select id="wikiSelect">
+        <option value="zu">Zulu (zu)</option>
+        <option value="xh">Xhosa (xh)</option>
+        <option value="ve">Venda (ve)</option>
+        <option value="ts">Xitsonga (ts)</option>
+        <option value="tn">Tswana (tn)</option>
+        <option value="st">Sesotho (st)</option>
+        <option value="ss">Swati (ss)</option>
+        <option value="nr">Ndebele (nr)</option>
+        <option value="af">Afrikaans (af)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Wikipedia Username</label>
+      <input type="text" id="username" value="Derek J Moore"/>
+    </div>
+
+    <button id="loadBtn">
+      Analyze Contributions
+    </button>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats-grid">
+
+    <div class="card">
+      <span class="label">Total Contributions</span>
+      <h2 id="totalContribs">0</h2>
+    </div>
+
+    <div class="card">
+      <span class="label">Unique Pages</span>
+      <h2 id="uniquePages">0</h2>
+    </div>
+
+    <div class="card">
+      <span class="label">Current Edit Streak</span>
+      <h2 id="editStreak">0 days</h2>
+    </div>
+
+    <div class="card">
+      <span class="label">Latest Edit</span>
+      <h2 id="latestEdit">-</h2>
+    </div>
+
+    <div class="card">
+      <span class="label">Top Namespace</span>
+      <h2 id="topNamespace">-</h2>
+    </div>
+
+  </section>
+
+  <!-- CONTRIBUTION CALENDAR -->
+
+  <section class="panel">
+
+    <div class="section-header">
+      <h3>Contribution Calendar</h3>
+      <p>
+        GitHub-style yearly edit activity
+      </p>
+    </div>
+
+    <div
+      id="contributionCalendar"
+      class="calendar-grid">
+    </div>
+
+  </section>
+
+  <!-- MOMENTUM GRAPH -->
+
+  <section class="panel">
+
+    <div class="section-header">
+      <h3>Momentum Graph</h3>
+      <p>
+        Daily editing momentum and intensity
+      </p>
+    </div>
+
+    <div class="momentum-wrapper">
+      <svg
+        id="momentumGraph"
+        viewBox="0 0 900 220">
+      </svg>
+    </div>
+
+  </section>
+
+  <!-- BAR CHART -->
+
+  <section class="panel">
+
+    <div class="section-header">
+      <h3>Contribution Activity</h3>
+      <p>
+        Edit volume over recent days
+      </p>
+    </div>
+
+    <div class="chart" id="chart"></div>
+
+  </section>
+
+  <!-- TABLE -->
+
+  <section class="panel">
+
+    <div class="section-header">
+      <h3>Recent Contributions</h3>
+      <p>
+        Latest user edits from Wikipedia API
+      </p>
+    </div>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Page</th>
+            <th>Timestamp</th>
+            <th>Comment</th>
+            <th>Size Diff</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="contribTable"></tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
 
